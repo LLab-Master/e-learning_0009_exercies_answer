@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}商品登録{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<h2>以下の内容で商品を登録しました。</h2>
+
+<p>商品名: {{product.name}}</p>
+<p>価格: {{product.price}}</p>
+<p>カテゴリー: {{product.category_name}}</p>
+
+
+<a href={{ url_for('index') }}>メニューに戻る</a>
+<br>
+
+{% endblock %}

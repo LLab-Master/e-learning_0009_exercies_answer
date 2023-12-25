@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}商品削除Wellcome{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<h2>以下のデータを削除します。</h2>
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>{{product[0]}}</td>
+    </tr>
+    <tr>
+        <th>商品名</th>
+        <td>{{product[1]}}</td>
+    </tr>
+    <tr>
+        <th>価格</th>
+        <td>{{product[2]}}</td>
+    </tr>
+    <tr>
+        <th>カテゴリー</th>
+        <td>{{product[4]}}</td>
+    </tr>
+
+</table>
+
+<a href={{ url_for('product_delete_done',id=product[0]) }}>削除</a>
+<br>
+
+{% endblock %}

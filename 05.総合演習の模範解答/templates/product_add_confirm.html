@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Wellcome{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<h2>登録内容の確認です。</h2>
+
+<table border="1">
+    <tr>
+        <th>商品名</th>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <th>価格</th>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <th>カテゴリー</th>
+        <td>{{category_name}}</td>
+    </tr>
+
+</table>
+
+<a href={{ url_for('product_add_done') }}>登録</a>
+<br>
+
+{% endblock %}

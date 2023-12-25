@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}カテゴリー登録{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<h2>以下の内容でカテゴリーを登録しました。</h2>
+
+<p>カテゴリー名: {{category.name}}</p>
+
+
+<a href={{ url_for('index') }}>メニューに戻る</a>
+<br>
+
+{% endblock %}

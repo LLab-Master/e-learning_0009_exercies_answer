@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}商品一覧{% endblock %}
+{% block head %}
+{{ super() }}
+{% endblock %}
+
+
+{%  block content %}
+<div class="container">
+
+    <h1>Product List</h1>
+
+    <form method="post">
+    {{form.hidden_tag()}}
+    {{form.name.label}}
+    {{form.name}}
+    {{form.submit}}
+    </form>
+    
+    <table border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>
+              Price<br>
+              <form action={{ url_for('product_list') }} method="POST">
+              <input type="submit" name="asc" value="↓">
+              <input type="submit" name="desc" value="↑">
+              </form>
+            </th>
+            <th>Category</th>
+            <th>編集</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product[0]}}</td>
+            <td>{{product[1]}}</td>
+            <td>{{product[2]}}</td>
+            <td>{{product[4]}}</td>
+            <td>
+                <a href={{ url_for('product_delete',id=product[0])}}>削除</a>
+                <a href={{ url_for('product_update',id=product[0])}}>編集</a>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+{% endblock %}

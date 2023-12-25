@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}category追加{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<h2>登録内容の確認です。</h2>
+
+<table border="1">
+    <tr>
+        <th>カテゴリー名</th>
+        <td>{{category.name}}</td>
+    </tr>
+
+</table>
+
+<a href={{ url_for('category_add_done') }}>登録</a>
+<br>
+
+{% endblock %}

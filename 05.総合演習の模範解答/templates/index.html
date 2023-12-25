@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Product メンテナンス{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+<h1>Product メンテナンス</h1>
+<p>
+    <a href={{ url_for('product_list') }}>商品一覧</a><br>
+    <a href={{ url_for('product_add') }}>商品登録</a><br>
+    <a href={{ url_for('category_list') }}>商品カテゴリー一覧</a><br>
+    <a href={{ url_for('category_add') }}>商品カテゴリー登録</a><br>
+</p>
+{% endblock %}

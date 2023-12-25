@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}カテゴリー更新{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+<h2>以下の内容で変更しました。</h2>
+
+<p>ID: {{category.id}}</p>
+<p>名前: {{category.name}}</p>
+
+
+<a href={{ url_for('index') }}>メニューに戻る</a>
+<br>
+
+{% endblock %}

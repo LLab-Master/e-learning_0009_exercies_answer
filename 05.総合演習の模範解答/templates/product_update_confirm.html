@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}商品登録内容確認{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<h2>登録内容の確認です。</h2>
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>{{session['product_id']}}</td>
+    </tr>
+    <tr>
+        <th>商品名</th>
+        <td>{{product.name}}</td>
+    </tr>
+    <tr>
+        <th>価格</th>
+        <td>{{product.price}}</td>
+    </tr>
+    <tr>
+        <th>カテゴリー</th>
+        <td>{{category_name}}</td>
+    </tr>
+
+</table>
+
+<a href={{ url_for('product_update_done') }}>登録</a>
+<br>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}カテゴリー登録内容確認{% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+
+{% block content %}
+
+
+<h2>登録内容の確認です。</h2>
+
+<table border="1">
+    <tr>
+        <td>ID</td>
+        <td>{{session['category_id']}}</td>
+    </tr>
+    <tr>
+        <th>カテゴリー名</th>
+        <td>{{category.name}}</td>
+    </tr>
+
+</table>
+
+<a href={{ url_for('category_update_done') }}>登録</a>
+<br>
+
+{% endblock %}

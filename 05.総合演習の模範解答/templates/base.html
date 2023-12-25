@@ -1,0 +1,26 @@
+<html lang="ja">
+<head>
+    {% block head %}
+
+    <meta charset="utf-8">
+    <title>{%  block title %}{%  endblock %}</title>
+
+    {%  endblock %}
+</head>
+<body>
+
+        {%  block content %}
+        {%  endblock %}
+
+      	{% block footer %}
+            <hr>
+            <br>
+            {%if login == False %}
+            {% else %}
+            <a href={{ url_for('logout') }}>ログアウト</a><br><br>
+            {% endif %}
+            CopyRight 2021 by <a href="https://www.lighhouselab.co.jp">ライトハウスラボ</a>
+      	{% endblock %}
+
+</body>
+</html>
